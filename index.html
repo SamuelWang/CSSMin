@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CSS Minifier</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="cssmin.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#btn-crunch').on('click', function () {
+                var result = YAHOO.compressor.cssmin($('#source').val());
+
+                $('#result').val(result);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn-crunch" type="button">Crunch</button>
+    <div>source</div>
+    <textarea id="source" style="width: 100%;" rows="20"></textarea>
+    <br>
+    <div>result</div>
+    <textarea id="result" style="width: 100%;" rows="20"></textarea>
+</body>
+</html>
